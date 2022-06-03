@@ -54,7 +54,7 @@ section
     transition: transform 450ms;
   }
   
-  .btn:hover ,.link:hover{
+ .btn:hover ,.link:hover{
     transition: transform 125ms;
     transform: translateY(-10px);
   }
@@ -65,7 +65,7 @@ header
 	left: 0;
 	width: 100%;
 	padding: 40px  100px;
-	z-index: 1000;
+	z-index: 1;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -146,7 +146,7 @@ header.sticky ul li a
 		padding: 5px 5px;
 		font-size: 18px;
 		text-decoration-line: none;
-		text-shadow: rgba(0 0 0 0.5);
+		
 }
 .btn1:hover{
 	background-color: #2196f3;
@@ -232,13 +232,11 @@ img
 .container .card .face.face1 .content{
   opacity: .5;
   transition:  0.5s;
-  text-align: center;
-  
-   
-  
-  
- 
+  text-align: center; 
 
+}
+.container .card .face.face1 img{
+	filter: invert(1);
 }
 
 .container .card:hover .face.face1 .content{
@@ -322,7 +320,6 @@ img
 	font-size: 10px;
 	background-size: 10px;
 	background-color: transparent;
-
 }
 .work .content .explore-col .btn:hover{
 	background-color: #2196f3;
@@ -332,6 +329,7 @@ img
 }
 .explore-col:hover{
  box-shadow: 0 0 20px 0px rgba(0,0,0,0.4);
+    
 
 }
 
@@ -617,4 +615,17 @@ img
 		min-width: :40px;
 		margin: 20px 0;
 	}
+
+	:root{
+	--primary:hsla(348, 97%, 63%, 0.3) ;
+	--secondary:hsla(230, 96%, 63%, 0.3) ;
+}
+.explore-col{
+    flex-basis: 45%;
+    background:linear-gradient(135deg, var(--primary),var(--secondary));
+    border-radius:10px;
+    margin-bottom: 5%;
+    padding:20px 12px;
+    box-sizing:border-box;
+}
 }
