@@ -19,11 +19,12 @@ button.addEventListener("click",(e)=>{
 e.preventDefault();
 var Email=input[1].value;
 var name = input[0].value;
+var message = msg.value;
 let patEmail = /^[A-Za-z0-9._-]{3,20}@[A-Za-z0-9]{3,20}[.][A-Za-z.]{3,6}$/;
-if(patEmail.test(Email) &&name!=" " && msg.value!=" "){
+if(patEmail.test(Email) &&name!=" " && message!=" "){
     console.log(name, Email);
     console.log(msg.value);
-    sendEmail(); 
+    sendEmail(name, Email, message ); 
 }   
 
 else{
@@ -36,25 +37,22 @@ alert("Fill all te details!");
 
 
 
-function sendEmail(){
+function sendEmail(name,email,msg){
 	Email.send({
-    Host : "smtp.gmail.com",
-    Username : "ishamahajan.9888@gmail.com",
-    Password : "rfeamqxfgveqxtih",
+   SecureToken : "2e7a82e8-d75a-43b7-87d2-47bd330a7560",
     To : 'ishamahajan.9888@gmail.com',
     From : Email,
     Subject : "new Contact for Enquiry",
     Body : 'Name: ${name} <br> Email:${Email} <br> Message:${msg}'
 }).then(
   message =>{
-      console.log (message);
+     // console.log (message);
           if(message=='OK'){
           alert('Your mail has been send. Thank you for connecting.');
           }
           else{
-            console.error (message);
-            alert('There is error at sending message. ')
-        }    
+            alert("There is an error!");
+          }  
           
   }
 
