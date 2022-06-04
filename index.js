@@ -46,11 +46,9 @@ function sendEmail(name,email,msg){
     Body : 'Name: ${name} <br> Email:${Email} <br> Message:${msg}'
 }).then(
   message =>{
-     // console.log (message);
-         {
           alert('Your mail has been send. Thank you for connecting.');
           }
-      
+          
 
 );
 }		
