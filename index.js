@@ -47,14 +47,10 @@ function sendEmail(name,email,msg){
 }).then(
   message =>{
      // console.log (message);
-          if(message=='OK'){
+         {
           alert('Your mail has been send. Thank you for connecting.');
           }
-          else{
-            alert("There is an error!");
-          }  
-          
-  }
+      
 
 );
 }		
